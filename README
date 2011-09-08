@@ -1,0 +1,15 @@
+LR_IMAGE
+
+LR_IMAGE is a minimalistic image library written in C.
+
+It was written in a fit or rage inspired by the ImageMagick library.
+
+Look within lr_image.h for documentation.
+
+This code depends the Independent JPEG Group's JPEG library
+available at http://www.ijg.org/files/jpegsrc.v6b.tar.gz 
+
+Licensing terms are explained in the LICENSE file.
+
+In theory this library should compile under windows, but the
+included Makefile is for Unix.  Lemme know if you try.
