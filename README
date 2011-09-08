@@ -1,10 +1,14 @@
-LR_IMAGE
-
 LR_IMAGE is a minimalistic image library written in C.
 
 It was written in a fit or rage inspired by the ImageMagick library.
 
 Look within lr_image.h for documentation.
+
+Included are a few command line sample programs.
+
+  thumb - thumbnail a jpeg to a 200x200 or 100x100 gif
+  equalize - perform histogram equalization on a jpeg
+  block - montage a bunch of gif thumbnails
 
 This code depends the Independent JPEG Group's JPEG library
 available at http://www.ijg.org/files/jpegsrc.v6b.tar.gz 

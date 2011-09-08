@@ -28,6 +28,8 @@
  */
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "lr_image.h"
 #include <unistd.h>
 #include <sys/stat.h>

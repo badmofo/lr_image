@@ -80,14 +80,19 @@ void lr_set_pixel(lr_image* img, int x, int y, int r, int g, int b)
 /// 
 lr_image* lr_read_image_raw(const char* filename, int width, int height)
 {
+  int bytes_read = 0;
   lr_image* img;
   FILE* f = fopen(filename, "rb");
   if ( f == 0 ) {
     return NULL;
   }
   img = lr_allocate_image(width, height);
-  fread(img->buffer, 1, width * height * 3, f);
+  bytes_read = fread(img->buffer, 1, width * height * 3, f);
   fclose(f);
+  if ( bytes_read != width * height * 3 ) {
+    lr_free_image(img);
+    return NULL;
+  }
   
   return img;
 }
@@ -415,13 +420,14 @@ void lr_reverse_image(lr_pixel pixels, int width, int height)
 
 int lr_get_image_type(const char *filepath)
 {
+  int bytes_read = 0;
   unsigned char header[16];
   FILE *fp = fopen(filepath, "rb");
   if ( !fp ) {
     return LR_FORMAT_UNKNOWN;
   }
   memset(header, 0, 16);
-  fread(header, 1, 16, fp);
+  bytes_read = fread(header, 1, 16, fp);
   fclose(fp);
 
   if ( header[0] == 0xff && header[1] == 0xd8 ) {
