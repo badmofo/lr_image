@@ -10,10 +10,10 @@ Included are a few command line sample programs.
   equalize - perform histogram equalization on a jpeg
   block - montage a bunch of gif thumbnails
 
-This code depends the Independent JPEG Group's JPEG library
-available at http://www.ijg.org/files/jpegsrc.v6b.tar.gz 
+Just need to run 'make' to build the static library and sample programs.
+
+Make sure you have the following dependencies installed:
+
+# yum install libjpeg-devel libpng-devel popt-devel
 
 Licensing terms are explained in the LICENSE file.
-
-In theory this library should compile under windows, but the
-included Makefile is for Unix.  Lemme know if you try.
