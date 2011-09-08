@@ -1,0 +1,20 @@
+The software in the LR_IMAGE library is written by Lucas Ryan and is licensed
+to you under the BSD license outlined at the beginning of the file lr_image.h.
+
+The files gd_lzw_out.c and wu.c are exceptional. These files are only included
+to support saving files in the GIF format. They were written by others and modified
+by Lucas to support the lr_image format.  If you do not need GIF functionality
+feel free to not link them into your application and not be subject to their 
+licensing/patent terms.
+
+Notes:
+
+gd_lzw_out.c - Liberal Implementation License 
+             - Unisys LZW Patent Applies (Expires June 20, 2003)
+             * Jef Poskanker
+             * Marcel Wijkstra
+             * David Koblas
+
+wu.c         - Public Domain
+             * Xiaolin Wu
+             * Benny (I have no idea who this guy is)
