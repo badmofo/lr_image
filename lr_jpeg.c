@@ -443,7 +443,7 @@ term_source (j_decompress_ptr cinfo)
  */
 
 GLOBAL(void)
-jpeg_mem_src (j_decompress_ptr cinfo, char * infile, unsigned int len)
+jpeg_mem_src2 (j_decompress_ptr cinfo, char * infile, unsigned int len)
 {
   my_src_ptr src;
 
@@ -491,7 +491,7 @@ lr_image* lr_read_image_jpeg_mem(unsigned char* buffer, int size)
 
   cinfo.err = jpeg_std_error(&jerr);
   jpeg_create_decompress(&cinfo);
-  jpeg_mem_src(&cinfo, buffer, size);
+  jpeg_mem_src2(&cinfo, buffer, size);
   jpeg_read_header(&cinfo, TRUE);
 
   cinfo.out_color_space = JCS_RGB;
@@ -558,7 +558,7 @@ lr_image* lr_read_image_jpeg_scaled_mem(unsigned char* buffer, int size,
   }
 
   jpeg_create_decompress(&cinfo);
-  jpeg_mem_src(&cinfo, buffer, size);
+  jpeg_mem_src2(&cinfo, buffer, size);
   jpeg_read_header(&cinfo, TRUE);
 
 
